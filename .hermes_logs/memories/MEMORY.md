@@ -1,0 +1,3 @@
+工作范围限定在 stock profile（~/.hermes/profiles/stock/）。原名 devops，已重命名为 stock。其它 profile（default、chh 等）不在工作范围内，不关注不操作。当前 stock profile 配置模型 deepseek-v4-pro，通过 Telegram 连接，Gateway systemd 服务 hermes-gateway-stock.service。ai-berkshire 项目路径 ~/GitHub/ai-berkshire/，投资角色技能文件路径 ~/invest_skills/。
+§
+Telegram 群组多 Bot 投研辩论系统架构决策：5 个独立 Bot（1 主持人+4 大师），全部使用长轮询（不用 webhook/nginx）。Gateway 层必须配置 require_mention:true + observe_unmentioned:true + exclusive_bot_mentions:true。专家顺序发言（非并行），@mention 触发。专家之间禁止用 @username 互相称呼。主持人有防自锁机制（收到专家完成信号后只回复“收到”+调度下一位，禁止追问）。完整设计方案在 ~/telegram-group-debate-design-v3.md。

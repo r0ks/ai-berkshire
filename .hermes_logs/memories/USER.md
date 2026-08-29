@@ -1,0 +1,1 @@
+Prefers a design-first workflow for architectural changes: present detailed design proposal → user reviews and gives second confirmation → only then proceed with implementation. Do not jump to config edits or file changes during the design phase — the user will explicitly say when to proceed with implementation.
